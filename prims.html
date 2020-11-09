@@ -2,9 +2,9 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="Dijkstra's algorithm" content="width=device-width, initial-scale=1.0">
+        <meta name="Prim's algorithm" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <title>Graph algorithm</title>
+        <title>Prim's algorithm</title>
 
         <style>
             body {
@@ -101,12 +101,14 @@
                 width:670px;
                 border-right: 1px solid #CCCCCC;
                 padding-right: 20px;
+                margin-bottom: 80px;
+                margin-top:40px;
             }
 
             h2 {
                 
                 font-weight: normal;
-                margin-top:80px;
+                margin-top:60px;
                 font-size:20px;
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 border-bottom: 2px solid #a91717;
@@ -114,15 +116,7 @@
                 
             }
             
-            h3 a {
-                
-                color:black;
-                font-size: 30px;
-                text-decoration: none;
-                
-            }
-            
-            
+
             #article-summary {
                 
                 color: #5a5a5a;
@@ -131,42 +125,6 @@
                 
             }
 
-
-            
-            #what-it-is {
-                
-                float:left;
-                width:670px;
-                padding-right: 20px;
-                
-            }
-            
-            #how-it-works {
-                
-                margin-top: 40px;
-                float:left;
-                width:1000px;
-                padding-right: 20px;
-                
-            }
-
-            .video{
-                width:560px;
-                height:315px;
-                margin-top: 20px;
-                float:left;
-                padding-right: 20px;
-            }
-
-
-            #main-article-image {
-                
-                width:300px;
-                margin-left:80px;
-                margin-top: -40px;
-                
-            }
-            
             #article-hr {
                 
                 border-top:1px solid #a91717;
@@ -180,14 +138,101 @@
                 text-decoration:none;
                 
             }
+
+            h3 a {
+                
+                color:black;
+                font-size: 30px;
+                text-decoration: none;
+                
+            }
+
+            #what-it-is {
+                
+                float:left;
+                width:670px;
+                padding-right: 20px;
+                
+            }
+
+            #main-article-image {
+                
+                width:300px;
+                margin-left:80px;
+                margin-top: -40px;
+                
+            }
             
+            #how-it-works {
+                
+                margin-top: 40px;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #how-it-work-article{
+                color: #5a5a5a;
+                width:900px;
+                float:left;
+            }
+
+            .video{
+                width:560px;
+                height:315px;
+                margin-top: 20px;
+                float:left;
+                padding-right: 20px;
+                margin-bottom: 20px;
+            }
+
+
+            #practical-application {
+                margin-top: auto;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #practical-application-article{
+                color: #5a5a5a;
+;
+                width:900px;
+                float:left;
+            }
+
+            #list{
+                color: #5a5a5a;
+                width:630px;
+                float:left;
+            }
+
             #reference {
                 
+                margin-top: 80px;
                 margin-left:20px;
                 width:280px;
                 float:right;
             }
             
+
+            .article-link {
+                
+                text-decoration: none;
+                color:rgb(0, 4, 255);
+                font-weight:bold;
+                font-size:11px;
+                float: left;
+                
+            }
+            
+            .article-link:hover {
+                
+                color:#1167a8;
+                
+            }
             h4 {
                 
                 font-weight: normal;
@@ -201,7 +246,7 @@
                 text-decoration: none;
                 color:rgb(0, 0, 0);
                 font-weight:bold;
-                font-size:11px;
+                font-size:13px;
                 float: left;
                 
             }
@@ -211,7 +256,6 @@
                 color:#1167a8;
                 
             }
-            
             .side-article {
                 
                 float:left;
@@ -244,7 +288,7 @@
         
             <div id="title-bar">
         
-                <h1>Graph Algorithm</h1>
+                <h1>Graph algorithms</h1>
         
             </div>
         
@@ -262,15 +306,13 @@
                 
                 <div id="menu-bar">
 
-                    <a href="index.html">Home</a>
-                    
-                    <a href="dijkstra.html">Dijkstra's algorithm</a>
+                    <a href="">Dijkstra's algorithm</a>
                         
-                    <a href="kruskals.html">Kruskal's algorithm</a>
+                    <a href="">Kruskal's algorithm</a>
                         
-                    <a href="prims.html">Prim's algorithm</a>
+                    <a href="">Prim's algorithm</a>
 
-                    <a href="credits.html">Credits</a>
+                    <a href="">Credits</a>
                     
                 </div>
                 
@@ -284,7 +326,7 @@
         
             <div id="main-article">
         
-                <h2>Dijkstra's algorithm</h2>
+                <h2>Prim's algorithm</h2>
                 
                 <div id="what-it-is">
         
@@ -292,52 +334,51 @@
 
                     <div id="article-summary">
 
-                        <p>Dijkstra's algorithm to find the shortest path between a and b. It picks the unvisited vertex with the lowest distance,
-                        calculates the distance through it to each unvisited neighbor, and updates the neighbor's distance if smaller. Mark
-                        visited (set to red) when done with neighbors.</p>
+                        <p>In computer science, Prim's (also known as Jarník's) algorithm is a greedy algorithm that finds a minimum spanning tree
+                        for a weighted undirected graph. This means it finds a subset of the edges that forms a tree that includes every vertex,
+                        where the total weight of all the edges in the tree is minimized. The algorithm operates by building this tree one
+                        vertex at a time, from an arbitrary starting vertex, at each step adding the cheapest possible connection from the tree
+                        to another vertex.</p>
                         
                         <hr id="article-hr"  align="left">
                         
                     </div>
                     
-                    <img id="main-article-image" src="Dijkstra_Animation.gif">
+                    <img id="main-article-image" src="prim.jpg">
                     
                 </div>
-                
+
+            <div class="clear"></div>
+
                 <div id="how-it-works">
-                                
+                        
                     <h3>How it works</h3>
                                     
-                    <div id="article-summary">
+                    <div id="how-it-work-article">
                                     
-                        <p>Let's watch a small but great video on youtube from @Computer Science to learn how it works</p>
-                        <iframe class="video" src="https://www.youtube.com/embed/pVfj6mxhdMw" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <hr id="article-hr" align="left">
-                                    
+                        <p>Let's watch a small but great video on youtube from @Michael Sambol to learn how it works.</p>
+                        <iframe class="video" src="https://www.youtube.com/embed/cplfcGZmX7I" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     
                 </div>
-                
-                <div id="how-it-works">
+
+            <div class="clear"></div>
+
+                <div id="practical-apllication">
                     
-                    <h3>Practical Application</h3>
+                    <h3>Practical Apllication</h3>
+                    <div class="clear"></div>
                                     
-                    <div id="article-summary">
-                        <ol>
-                            <li>Digital Mapping Services in Google Maps</li>
-                                <dd><a href="https://www.geeksforgeeks.org/open-shortest-path-first-ospf-protocol-states/"> Shortest Path First (OSPF)></a> is a link-state routing protocol that is used to find the best path between the source
-                                and the destination router using its own Shortest Path First. Dijkstra’s algorithm is widely used in the routing
-                                protocols required by the routers to update their forwarding table. The algorithm provides the shortest cost path from
-                                the source router to other routers in the network.</dd>
-                            <li>Social Networking Applications</li>
-                                    <dd>
-                                        
-                                    </dd>
-                            <li>Telephone Network</li>
-                            <li>IP routing to find Open shortest Path First</li>
-                            <li>Flighting Agenda</li>
-                            <li>Designate file server</li>
-                            <li>......</li>
+                    <div id="practical-apllication-article">
+                        <ol id="list">
+                            <li><strong>Cluster Analysis</strong></li>
+                                    <dd>Real-time face tracking and verification (i.e. locating human faces in a video stream).</dd>
+                                    <dd>Protocols in computer science to avoid network cycles.</dd>
+                            
+                            <br></br>
+                            <li><strong>Entropy based image registration</strong></li>
+                                    <dd>Max bottleneck paths.</dd>
+                                    <dd>Dithering (adding white noise to a digital recording in order to reduce distortion).</dd>
                         </ol>
 
                     </div>
@@ -358,16 +399,16 @@
             
                 <div class="side-article">
                 
-                    <p><a class="reference-link" href="https://github.com/luobotang/graph">https://github.com/luobotang/graph</a></p>
+                    <p><a class="reference-link" href="https://www.statisticshowto.com/minimum-spanning-tree/"> www.statisticshowto.com/minimum-spanning-tree/</a></p>
 
                 </div>
                 
                 <div class="side-article">
                                 
-                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=pVfj6mxhdMw">a youtube tutorials by "Computer Science"</a></p>
+                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=cplfcGZmX7I">Youtube tutorials by youtuber:"Michael Sambol"</a></p>
                                 
                 </div>
-                
+
                 <div class="clear"></div>
                 
                 

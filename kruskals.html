@@ -2,9 +2,9 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="Dijkstra's algorithm" content="width=device-width, initial-scale=1.0">
+        <meta name="Kruskal's algorithm" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <title>Graph algorithm</title>
+        <title>Kruskal's algorithm</title>
 
         <style>
             body {
@@ -101,12 +101,14 @@
                 width:670px;
                 border-right: 1px solid #CCCCCC;
                 padding-right: 20px;
+                margin-bottom: 80px;
+                margin-top:40px;
             }
 
             h2 {
                 
                 font-weight: normal;
-                margin-top:80px;
+                margin-top:60px;
                 font-size:20px;
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 border-bottom: 2px solid #a91717;
@@ -114,15 +116,7 @@
                 
             }
             
-            h3 a {
-                
-                color:black;
-                font-size: 30px;
-                text-decoration: none;
-                
-            }
-            
-            
+
             #article-summary {
                 
                 color: #5a5a5a;
@@ -131,42 +125,6 @@
                 
             }
 
-
-            
-            #what-it-is {
-                
-                float:left;
-                width:670px;
-                padding-right: 20px;
-                
-            }
-            
-            #how-it-works {
-                
-                margin-top: 40px;
-                float:left;
-                width:1000px;
-                padding-right: 20px;
-                
-            }
-
-            .video{
-                width:560px;
-                height:315px;
-                margin-top: 20px;
-                float:left;
-                padding-right: 20px;
-            }
-
-
-            #main-article-image {
-                
-                width:300px;
-                margin-left:80px;
-                margin-top: -40px;
-                
-            }
-            
             #article-hr {
                 
                 border-top:1px solid #a91717;
@@ -180,14 +138,102 @@
                 text-decoration:none;
                 
             }
+
+            h3 a {
+                
+                color:black;
+                font-size: 30px;
+                text-decoration: none;
+                
+            }
+
+            #what-it-is {
+                
+                float:left;
+                width:670px;
+                padding-right: 20px;
+                
+            }
+
+            #main-article-image {
+                
+                
+                width:300px;
+                margin-left:80px;
+                margin-top: 50px;
+                
+            }
             
+            #how-it-works {
+                
+                margin-top: 40px;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #how-it-work-article{
+                color: #5a5a5a;
+                width:900px;
+                float:left;
+            }
+
+            .video{
+                width:560px;
+                height:315px;
+                margin-top: 20px;
+                float:left;
+                padding-right: 20px;
+                margin-bottom: 20px;
+            }
+
+
+            #practical-application {
+                margin-top: auto;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #practical-application-article{
+                color: #5a5a5a;
+;
+                width:900px;
+                float:left;
+            }
+
+            #list{
+                color: #5a5a5a;
+                width:630px;
+                float:left;
+            }
+
             #reference {
                 
+                margin-top: 80px;
                 margin-left:20px;
                 width:280px;
                 float:right;
             }
             
+
+            .article-link {
+                
+                text-decoration: none;
+                color:rgb(0, 4, 255);
+                font-weight:bold;
+                font-size:11px;
+                float: left;
+                
+            }
+            
+            .article-link:hover {
+                
+                color:#1167a8;
+                
+            }
             h4 {
                 
                 font-weight: normal;
@@ -201,7 +247,7 @@
                 text-decoration: none;
                 color:rgb(0, 0, 0);
                 font-weight:bold;
-                font-size:11px;
+                font-size:13px;
                 float: left;
                 
             }
@@ -211,7 +257,6 @@
                 color:#1167a8;
                 
             }
-            
             .side-article {
                 
                 float:left;
@@ -244,7 +289,7 @@
         
             <div id="title-bar">
         
-                <h1>Graph Algorithm</h1>
+                <h1>Graph Algorithms</h1>
         
             </div>
         
@@ -262,15 +307,15 @@
                 
                 <div id="menu-bar">
 
-                    <a href="index.html">Home</a>
+                    <a href="">Home</a>
                     
-                    <a href="dijkstra.html">Dijkstra's algorithm</a>
+                    <a href="Dijikstra's algorithm.html">Dijkstra's algorithm</a>
                         
-                    <a href="kruskals.html">Kruskal's algorithm</a>
+                    <a href="">Kruskal's algorithm</a>
                         
-                    <a href="prims.html">Prim's algorithm</a>
+                    <a href="">Prim's algorithm</a>
 
-                    <a href="credits.html">Credits</a>
+                    <a href="">Credits</a>
                     
                 </div>
                 
@@ -284,7 +329,7 @@
         
             <div id="main-article">
         
-                <h2>Dijkstra's algorithm</h2>
+                <h2>Kruskal's algorithm</h2>
                 
                 <div id="what-it-is">
         
@@ -292,52 +337,70 @@
 
                     <div id="article-summary">
 
-                        <p>Dijkstra's algorithm to find the shortest path between a and b. It picks the unvisited vertex with the lowest distance,
-                        calculates the distance through it to each unvisited neighbor, and updates the neighbor's distance if smaller. Mark
-                        visited (set to red) when done with neighbors.</p>
+                        <p>Kruskal's algorithm finds a minimum spanning forest of an undirected edge-weighted graph. If the graph is connected, it
+                        finds a minimum spanning tree. (A minimum spanning tree of a connected graph is a subset of the edges that forms a tree
+                        that includes every vertex, where the sum of the weights of all the edges in the tree is minimized. For a disconnected
+                        graph, a minimum spanning forest is composed of a minimum spanning tree for each connected component.) It is a greedy
+                        algorithm in graph theory as in each step it adds the next lowest-weight edge that will not form a cycle to the minimum
+                        spanning forest.</p>
                         
                         <hr id="article-hr"  align="left">
                         
                     </div>
                     
-                    <img id="main-article-image" src="Dijkstra_Animation.gif">
+                    <img id="main-article-image" src="maxresdefault.jpg">
                     
                 </div>
-                
+
+            <div class="clear"></div>
+
                 <div id="how-it-works">
-                                
+                        
                     <h3>How it works</h3>
                                     
-                    <div id="article-summary">
+                    <div id="how-it-work-article">
                                     
-                        <p>Let's watch a small but great video on youtube from @Computer Science to learn how it works</p>
-                        <iframe class="video" src="https://www.youtube.com/embed/pVfj6mxhdMw" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <hr id="article-hr" align="left">
-                                    
+                        <p>Let's watch a small but great video on youtube from @Michael Sambol to learn how it works.</p>
+                        <iframe class="video" src="https://www.youtube.com/embed/71UQH7Pr9kU" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     
                 </div>
-                
-                <div id="how-it-works">
+
+            <div class="clear"></div>
+
+                <div id="practical-apllication">
                     
-                    <h3>Practical Application</h3>
+                    <h3>Practical Apllication</h3>
+                    <div class="clear"></div>
                                     
-                    <div id="article-summary">
-                        <ol>
-                            <li>Digital Mapping Services in Google Maps</li>
-                                <dd><a href="https://www.geeksforgeeks.org/open-shortest-path-first-ospf-protocol-states/"> Shortest Path First (OSPF)></a> is a link-state routing protocol that is used to find the best path between the source
-                                and the destination router using its own Shortest Path First. Dijkstra’s algorithm is widely used in the routing
-                                protocols required by the routers to update their forwarding table. The algorithm provides the shortest cost path from
-                                the source router to other routers in the network.</dd>
-                            <li>Social Networking Applications</li>
+                    <div id="practical-apllication-article">
+                        <ol id="list">
+                            <li><strong>Network design</strong></li>
+                                    <dd>– telephone, electrical, hydraulic, TV cable, computer, road
+                                    The standard application is to a problem like phone network design. You have a business with several offices; you want
+                                    to lease phone lines to connect them up with each other; and the phone company charges different amounts of money to
+                                    connect different pairs of cities. You want a set of lines that connects all your offices with a minimum total cost. It
+                                    should be a spanning tree, since if a network isn’t a tree you can always remove some edges and save money.</dd>
+                            
+                            <br></br>
+                            <li><strong>Approximation algorithms for NP-hard problems</strong></li>
                                     <dd>
+                                        – traveling salesperson problem, Steiner tree
+                                        A less obvious application is that the minimum spanning tree can be used to approximately solve the traveling salesman
+                                        problem. A convenient formal way of defining this problem is to find the shortest path that visits each point at least
+                                        once.
                                         
+                                        Note that if you have a path visiting all points exactly once, it’s a special kind of tree. For instance in the example
+                                        above, twelve of sixteen spanning trees are actually paths. If you have a path visiting some vertices more than once,
+                                        you can always drop some edges to get a tree. So in general the MST weight is less than the TSP weight, because it’s a
+                                        minimization over a strictly larger set.
                                     </dd>
-                            <li>Telephone Network</li>
-                            <li>IP routing to find Open shortest Path First</li>
-                            <li>Flighting Agenda</li>
-                            <li>Designate file server</li>
-                            <li>......</li>
+                            <br></br>
+                            <li><strong>Cluster analysis</strong></li>
+                                    <dd>
+                                        k clustering problem can be viewed as finding an MST and deleting the k-1 most
+                                        expensive edges.
+                                    </dd>
                         </ol>
 
                     </div>
@@ -350,7 +413,7 @@
                 
                 <div class="side-article">
                 
-                    <p><a class="reference-link" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Algorithm">wikipedia</a></p>
+                    <p><a class="reference-link" href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">wikipedia</a></p>
                     
                 </div>
                 
@@ -358,14 +421,20 @@
             
                 <div class="side-article">
                 
-                    <p><a class="reference-link" href="https://github.com/luobotang/graph">https://github.com/luobotang/graph</a></p>
+                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=5xosHRdxqHA">https://www.youtube.com/watch?v=5xosHRdxqHA</a></p>
 
                 </div>
                 
                 <div class="side-article">
                                 
-                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=pVfj6mxhdMw">a youtube tutorials by "Computer Science"</a></p>
+                    <p><a class="reference-link" href="https://www.youtube.com/embed/71UQH7Pr9kU">Youtube tutorials by youtuber:"Michael Sambol"</a></p>
                                 
+                </div>
+
+                <div class="side-article">
+                
+                    <p><a class="reference-link" href="https://www.geeksforgeeks.org/applications-of-minimum-spanning-tree/">https://www.geeksforgeeks.org/applications-of-minimum-spanning-tree/</a></p>
+                
                 </div>
                 
                 <div class="clear"></div>
