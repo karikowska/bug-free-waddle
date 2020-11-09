@@ -1,0 +1,455 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Dijkstra's algorithm" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Dijkstra's algorithm</title>
+
+        <style>
+            body {
+                
+                margin: 0;
+                padding: 0;
+                font-family: Helvetica, Arial, sans-serif;
+                background-color: whitesmoke;
+                
+            }
+
+            .clear {
+                
+                clear:both;
+                
+            }
+            
+            #title-bar-container {
+                
+                border-top: 1px solid #CCCCCC;
+                background-color: #BB1919;
+                width:1000 px;
+                height:70px;
+                
+            }
+            
+            #title-bar {
+                text-align: center;
+                width:1000px;
+                margin: auto;
+
+                
+            }
+
+            h1 {
+                margin-top: -5px;
+                color:white;
+                font-size: 30px;
+                font-weight: normal;
+                padding-top: 20px;
+                font-size: 30px;
+            }
+            
+            
+            #menu-bar-container {
+                
+                background-color: #A91717;
+                width: 100%;
+                height: 20px;
+                
+            }
+            
+            #menu-bar {
+                
+                width:1000px;
+                margin:0 auto;
+                height:20px;
+                text-align: center;
+                
+            }
+            #menu-bar a:hover {
+                
+                text-decoration: underline;
+                
+            }
+            #menu-bar a {
+                
+                color: white;
+                text-decoration: none;
+                padding: 0 50px;
+                border-right: 1px solid #BB4545;
+                font-size:15px;
+                position: relative;
+                top: -10px;
+                
+            }
+            
+            
+            .no-border {
+                
+                border:none !important;
+                
+            }
+            
+            
+            #page-container {
+                
+                width:1000px;
+                margin: 0 auto;
+                
+            }
+            #main-article{
+                float:left;
+                width:670px;
+                border-right: 1px solid #CCCCCC;
+                padding-right: 20px;
+                margin-bottom: 80px;
+                margin-top:40px;
+            }
+
+            h2 {
+                
+                font-weight: normal;
+                margin-top:60px;
+                font-size:20px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border-bottom: 2px solid #a91717;
+                width:105px;
+                
+            }
+            
+
+            #article-summary {
+                
+                color: #5a5a5a;
+                width:250px;
+                float:left;
+                
+            }
+
+            #article-hr {
+                
+                border-top:1px solid #a91717;
+                width:250px;
+                
+            }
+            
+            .article-link {
+                
+                color:black;
+                text-decoration:none;
+                
+            }
+
+            h3 a {
+                
+                color:black;
+                font-size: 30px;
+                text-decoration: none;
+                
+            }
+
+            #what-it-is {
+                
+                float:left;
+                width:670px;
+                padding-right: 20px;
+                
+            }
+
+            #main-article-image {
+                
+                width:300px;
+                margin-left:80px;
+                margin-top: -40px;
+                
+            }
+            
+            #how-it-works {
+                
+                margin-top: 40px;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #how-it-work-article{
+                color: #5a5a5a;
+                width:900px;
+                float:left;
+            }
+
+            .video{
+                width:560px;
+                height:315px;
+                margin-top: 20px;
+                float:left;
+                padding-right: 20px;
+                margin-bottom: 20px;
+            }
+
+
+            #practical-application {
+                margin-top: auto;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #practical-application-article{
+                color: #5a5a5a;
+;
+                width:900px;
+                float:left;
+            }
+
+            #list{
+                color: #5a5a5a;
+                width:630px;
+                float:left;
+            }
+
+            #reference {
+                
+                margin-top: 80px;
+                margin-left:20px;
+                width:280px;
+                float:right;
+            }
+            
+
+            .article-link {
+                
+                text-decoration: none;
+                color:rgb(0, 4, 255);
+                font-weight:bold;
+                font-size:11px;
+                float: left;
+                
+            }
+            
+            .article-link:hover {
+                
+                color:#1167a8;
+                
+            }
+            h4 {
+                
+                font-weight: normal;
+                font-size:20px;
+                
+            }
+            
+            
+            .reference-link {
+                
+                text-decoration: none;
+                color:rgb(0, 0, 0);
+                font-weight:bold;
+                font-size:13px;
+                float: left;
+                
+            }
+            
+            .reference-link:hover {
+                
+                color:#1167a8;
+                
+            }
+            .side-article {
+                
+                float:left;
+                color: black;
+                width:180px;
+                position:relative;
+                top:-18px;
+            }
+            
+            .no-border {
+                
+                border-left:none;
+                padding:0;
+            }
+            
+            .border-right {
+                
+                border-right: 1px solid #CCCCCC;
+                line-height: 15px;
+                
+            }
+        </style>
+    </head>
+
+    <body>
+                  
+        <div class="clear"></div>
+        
+        <div id="title-bar-container">
+        
+            <div id="title-bar">
+        
+                <h1>Graph Algorithms</h1>
+        
+            </div>
+        
+            <div class="clear"></div>
+        
+            <div id="menu-bar-container">
+                <div id="menu-bar"></div>
+            </div>
+
+            <div class="clear"></div>
+           
+            <div class="clear"></div>
+                
+            <div id="menu-bar-container">
+                
+                <div id="menu-bar">
+
+                    <a href="">Home</a>
+                    
+                    <a href="">Dijkstra's algorithm</a>
+                        
+                    <a href="">Kruskal's algorithm</a>
+                        
+                    <a href="">Prim's algorithm</a>
+
+                    <a href="">Credits</a>
+                    
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        <div class="clear"></div>
+        
+        <div id="page-container">
+        
+            <div id="main-article">
+        
+                <h2>Dijkstra's algorithm</h2>
+                
+                <div id="what-it-is">
+        
+                    <h3>What it is</h3>
+
+                    <div id="article-summary">
+
+                        <p>Dijkstra's algorithm to find the shortest path between a and b. It picks the unvisited vertex with the lowest distance,
+                        calculates the distance through it to each unvisited neighbor, and updates the neighbor's distance if smaller. Mark
+                        visited (set to red) when done with neighbors.</p>
+                        
+                        <hr id="article-hr"  align="left">
+                        
+                    </div>
+                    
+                    <img id="main-article-image" src="Dijkstra_Animation.gif">
+                    
+                </div>
+
+            <div class="clear"></div>
+
+                <div id="how-it-works">
+                        
+                    <h3>How it works</h3>
+                                    
+                    <div id="how-it-work-article">
+                                    
+                        <p>Let's watch a small but great video on youtube from @Computer Science to learn how it works.</p>
+                        <iframe class="video" src="https://www.youtube.com/embed/pVfj6mxhdMw" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    
+                    </div>
+                    
+                </div>
+
+            <div class="clear"></div>
+
+                <div id="practical-apllication">
+                    
+                    <h3>Practical Apllication</h3>
+                    <div class="clear"></div>
+                                    
+                    <div id="practical-apllication-article">
+                        <ol id="list">
+                            <li><strong>Digital Mapping Services in Google Maps</strong></li>
+                                    <dd>Many times we have tried to find the distance in G-Maps, from one city to another, or from your location to the nearest
+                                    desired location. There encounters the Shortest Path Algorithm, as there are various routes/paths connecting them but it
+                                    has to show the minimum distance, so Dijkstra’s Algorithm is used to find the minimum distance between two locations
+                                    along the path. Consider India as a graph and represent a city/place with a vertex and the route between two
+                                    cities/places as an edge, then by using this algorithm, the shortest routes between any two cities/places or from one
+                                    city/place to another city/place can be calculated.</dd>
+                            
+                            <br></br>
+                            <li><strong>Social Networking Applications</strong></li>
+                                    <dd>
+                                        In many applications you might have seen the app suggests the list of friends that a particular user may know. How do
+                                        you think many social media companies implement this feature efficiently, especially when the system has over a billion
+                                        users. The standard Dijkstra algorithm can be applied using the shortest path between users measured through handshakes
+                                        or connections among them. When the social networking graph is very small, it uses standard Dijkstra’s algorithm along
+                                        with some other features to find the shortest paths, and however, when the graph is becoming bigger and bigger, the
+                                        standard algorithm takes a few several seconds to count and alternate advanced algorithms are used.
+
+                                    </dd>
+                            <br></br>
+                            <li><strong>Telephone Network</strong></li>
+                                    <dd>
+                                        As we know, in a telephone network, each line has a bandwidth, ‘b’. The bandwidth of the transmission line is the
+                                        highest frequency that that line can support. Generally, if the frequency of the signal is higher in a certain line, the
+                                        signal is reduced by that line. Bandwidth represents the amount of information that can be transmitted by the line. If
+                                        we imagine a city to be a graph, the vertices represent the switching stations, and the edges represent the transmission
+                                        lines and the weight of the edges represents ‘b’. So as you can see it can fall into the category of shortest distance
+                                        problem, for which the Dijkstra is can be used.
+                                    </dd>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div id="reference">
+            
+                <h4>References</h4>
+                
+                <div class="side-article">
+                
+                    <p><a class="reference-link" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Algorithm">wikipedia</a></p>
+                    
+                </div>
+                
+                <div class="clear"></div>
+            
+                <div class="side-article">
+                
+                    <p><a class="reference-link" href="https://github.com/luobotang/graph">https://github.com/luobotang/graph</a></p>
+
+                </div>
+                
+                <div class="side-article">
+                                
+                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=pVfj6mxhdMw">Youtube tutorials by youtuber:"Computer Science"</a></p>
+                                
+                </div>
+
+                <div class="side-article">
+                
+                    <p><a class="reference-link" href="https://www.geeksforgeeks.org/applications-of-dijkstras-shortest-path-algorithm/">https://www.geeksforgeeks.org/applications-of-dijkstras-shortest-path-algorithm/</a></p>
+                
+                </div>
+                
+                <div class="clear"></div>
+                
+                
+                
+            
+            </div>
+            
+            
+            
+            
+            
+        </div>
+    
+    </body>
+
+</html>
