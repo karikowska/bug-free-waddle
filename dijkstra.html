@@ -1,0 +1,384 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Dijkstra's algorithm" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Graph algorithm</title>
+
+        <style>
+            body {
+                
+                margin: 0;
+                padding: 0;
+                font-family: Helvetica, Arial, sans-serif;
+                background-color: whitesmoke;
+                
+            }
+
+            .clear {
+                
+                clear:both;
+                
+            }
+            
+            #title-bar-container {
+                
+                border-top: 1px solid #CCCCCC;
+                background-color: #BB1919;
+                width:1000 px;
+                height:70px;
+                
+            }
+            
+            #title-bar {
+                text-align: center;
+                width:1000px;
+                margin: auto;
+
+                
+            }
+
+            h1 {
+                margin-top: -5px;
+                color:white;
+                font-size: 30px;
+                font-weight: normal;
+                padding-top: 20px;
+                font-size: 30px;
+            }
+            
+            
+            #menu-bar-container {
+                
+                background-color: #A91717;
+                width: 100%;
+                height: 20px;
+                
+            }
+            
+            #menu-bar {
+                
+                width:1000px;
+                margin:0 auto;
+                height:20px;
+                text-align: center;
+                
+            }
+            #menu-bar a:hover {
+                
+                text-decoration: underline;
+                
+            }
+            #menu-bar a {
+                
+                color: white;
+                text-decoration: none;
+                padding: 0 50px;
+                border-right: 1px solid #BB4545;
+                font-size:15px;
+                position: relative;
+                top: -10px;
+                
+            }
+            
+            
+            .no-border {
+                
+                border:none !important;
+                
+            }
+            
+            
+            #page-container {
+                
+                width:1000px;
+                margin: 0 auto;
+                
+            }
+            #main-article{
+                float:left;
+                width:670px;
+                border-right: 1px solid #CCCCCC;
+                padding-right: 20px;
+            }
+
+            h2 {
+                
+                font-weight: normal;
+                margin-top:80px;
+                font-size:20px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                border-bottom: 2px solid #a91717;
+                width:105px;
+                
+            }
+            
+            h3 a {
+                
+                color:black;
+                font-size: 30px;
+                text-decoration: none;
+                
+            }
+            
+            
+            #article-summary {
+                
+                color: #5a5a5a;
+                width:250px;
+                float:left;
+                
+            }
+
+
+            
+            #what-it-is {
+                
+                float:left;
+                width:670px;
+                padding-right: 20px;
+                
+            }
+            
+            #how-it-works {
+                
+                margin-top: 40px;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            .video{
+                width:560px;
+                height:315px;
+                margin-top: 20px;
+                float:left;
+                padding-right: 20px;
+            }
+
+
+            #main-article-image {
+                
+                width:300px;
+                margin-left:80px;
+                margin-top: -40px;
+                
+            }
+            
+            #article-hr {
+                
+                border-top:1px solid #a91717;
+                width:250px;
+                
+            }
+            
+            .article-link {
+                
+                color:black;
+                text-decoration:none;
+                
+            }
+            
+            #reference {
+                
+                margin-left:20px;
+                width:280px;
+                float:right;
+            }
+            
+            h4 {
+                
+                font-weight: normal;
+                font-size:20px;
+                
+            }
+            
+            
+            .reference-link {
+                
+                text-decoration: none;
+                color:rgb(0, 0, 0);
+                font-weight:bold;
+                font-size:11px;
+                float: left;
+                
+            }
+            
+            .reference-link:hover {
+                
+                color:#1167a8;
+                
+            }
+            
+            .side-article {
+                
+                float:left;
+                color: black;
+                width:180px;
+                position:relative;
+                top:-18px;
+            }
+            
+            .no-border {
+                
+                border-left:none;
+                padding:0;
+            }
+            
+            .border-right {
+                
+                border-right: 1px solid #CCCCCC;
+                line-height: 15px;
+                
+            }
+        </style>
+    </head>
+
+    <body>
+                  
+        <div class="clear"></div>
+        
+        <div id="title-bar-container">
+        
+            <div id="title-bar">
+        
+                <h1>Graph Algorithm</h1>
+        
+            </div>
+        
+            <div class="clear"></div>
+        
+            <div id="menu-bar-container">
+                <div id="menu-bar"></div>
+            </div>
+
+            <div class="clear"></div>
+           
+            <div class="clear"></div>
+                
+            <div id="menu-bar-container">
+                
+                <div id="menu-bar">
+
+                    <a href="https://karikowska.github.io/graphalgorithms/">Home</a>
+                    
+                    <a href="https://karikowska.github.io/graphalgorithms/dijkstra">Dijkstra's algorithm</a>
+                        
+                    <a href="">Kruskal's algorithm</a>
+                        
+                    <a href="">Prim's algorithm</a>
+                    
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        <div class="clear"></div>
+        
+        <div id="page-container">
+        
+            <div id="main-article">
+        
+                <h2>Dijkstra's algorithm</h2>
+                
+                <div id="what-it-is">
+        
+                    <h3>What it is</h3>
+
+                    <div id="article-summary">
+
+                        <p>Dijkstra's algorithm to find the shortest path between a and b. It picks the unvisited vertex with the lowest distance,
+                        calculates the distance through it to each unvisited neighbor, and updates the neighbor's distance if smaller. Mark
+                        visited (set to red) when done with neighbors.</p>
+                        
+                        <hr id="article-hr"  align="left">
+                        
+                    </div>
+                    
+                    <img id="main-article-image" src="Dijkstra_Animation.gif">
+                    
+                </div>
+                
+                <div id="how-it-works">
+                                
+                    <h3>How it works</h3>
+                                    
+                    <div id="article-summary">
+                                    
+                        <p>Let's watch a small but great video on youtube from @Computer Science to learn how it works</p>
+                        <iframe class="video" src="https://www.youtube.com/embed/pVfj6mxhdMw" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <hr id="article-hr" align="left">
+                                    
+                    </div>
+                    
+                </div>
+                
+                <div id="how-it-works">
+                    
+                    <h3>Practical Application</h3>
+                                    
+                    <div id="article-summary">
+                        <ol>
+                            <li>Digital Mapping Services in Google Maps</li>
+                                <dd><a href="https://www.geeksforgeeks.org/open-shortest-path-first-ospf-protocol-states/"> Shortest Path First (OSPF)></a> is a link-state routing protocol that is used to find the best path between the source
+                                and the destination router using its own Shortest Path First. Dijkstra’s algorithm is widely used in the routing
+                                protocols required by the routers to update their forwarding table. The algorithm provides the shortest cost path from
+                                the source router to other routers in the network.</dd>
+                            <li>Social Networking Applications</li>
+                                    <dd>
+                                        
+                                    </dd>
+                            <li>Telephone Network</li>
+                            <li>IP routing to find Open shortest Path First</li>
+                            <li>Flighting Agenda</li>
+                            <li>Designate file server</li>
+                            <li>......</li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div id="reference">
+            
+                <h4>References</h4>
+                
+                <div class="side-article">
+                
+                    <p><a class="reference-link" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Algorithm">wikipedia</a></p>
+                    
+                </div>
+                
+                <div class="clear"></div>
+            
+                <div class="side-article">
+                
+                    <p><a class="reference-link" href="https://github.com/luobotang/graph">https://github.com/luobotang/graph</a></p>
+
+                </div>
+                
+                <div class="side-article">
+                                
+                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=pVfj6mxhdMw">a youtube tutorials by "Computer Science"</a></p>
+                                
+                </div>
+                
+                <div class="clear"></div>
+                
+                
+                
+            
+            </div>
+            
+            
+            
+            
+            
+        </div>
+    
+    </body>
+
+</html>
