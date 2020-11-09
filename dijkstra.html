@@ -114,15 +114,7 @@
                 
             }
             
-            h3 a {
-                
-                color:black;
-                font-size: 30px;
-                text-decoration: none;
-                
-            }
-            
-            
+
             #article-summary {
                 
                 color: #5a5a5a;
@@ -131,42 +123,6 @@
                 
             }
 
-
-            
-            #what-it-is {
-                
-                float:left;
-                width:670px;
-                padding-right: 20px;
-                
-            }
-            
-            #how-it-works {
-                
-                margin-top: 40px;
-                float:left;
-                width:1000px;
-                padding-right: 20px;
-                
-            }
-
-            .video{
-                width:560px;
-                height:315px;
-                margin-top: 20px;
-                float:left;
-                padding-right: 20px;
-            }
-
-
-            #main-article-image {
-                
-                width:300px;
-                margin-left:80px;
-                margin-top: -40px;
-                
-            }
-            
             #article-hr {
                 
                 border-top:1px solid #a91717;
@@ -180,7 +136,72 @@
                 text-decoration:none;
                 
             }
+
+            h3 a {
+                
+                color:black;
+                font-size: 30px;
+                text-decoration: none;
+                
+            }
+
+            #what-it-is {
+                
+                float:left;
+                width:670px;
+                padding-right: 20px;
+                
+            }
+
+            #main-article-image {
+                
+                width:300px;
+                margin-left:80px;
+                margin-top: -40px;
+                
+            }
             
+            #how-it-works {
+                
+                margin-top: 40px;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #how-it-work-article{
+                color: #5a5a5a;
+                width:900px;
+                float:left;
+            }
+
+            .video{
+                width:560px;
+                height:315px;
+                margin-top: 20px;
+                float:left;
+                padding-right: 20px;
+                margin-bottom: 20px;
+            }
+
+                   
+
+            
+            #practical-application {
+                margin-top: auto;
+                float:left;
+                width:1000px;
+                padding-right: 20px;
+                
+            }
+
+            #practical-application-article{
+                color: #5a5a5a;
+                width:900px;
+                float:left;
+            }
+
             #reference {
                 
                 margin-left:20px;
@@ -188,6 +209,22 @@
                 float:right;
             }
             
+
+            .article-link {
+                
+                text-decoration: none;
+                color:rgb(0, 4, 255);
+                font-weight:bold;
+                font-size:11px;
+                float: left;
+                
+            }
+            
+            .article-link:hover {
+                
+                color:#1167a8;
+                
+            }
             h4 {
                 
                 font-weight: normal;
@@ -211,7 +248,6 @@
                 color:#1167a8;
                 
             }
-            
             .side-article {
                 
                 float:left;
@@ -244,7 +280,7 @@
         
             <div id="title-bar">
         
-                <h1>Graph Algorithm</h1>
+                <h1>Graph Algorithms</h1>
         
             </div>
         
@@ -303,41 +339,59 @@
                     <img id="main-article-image" src="Dijkstra_Animation.gif">
                     
                 </div>
-                
+
+            <div class="clear"></div>
+
                 <div id="how-it-works">
-                                
+                        
                     <h3>How it works</h3>
                                     
-                    <div id="article-summary">
+                    <div id="how-it-work-article">
                                     
-                        <p>Let's watch a small but great video on youtube from @Computer Science to learn how it works</p>
+                        <p>Let's watch a small but great video on youtube from @Computer Science to learn how it works.</p>
                         <iframe class="video" src="https://www.youtube.com/embed/pVfj6mxhdMw" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <hr id="article-hr" align="left">
                                     
                     </div>
                     
                 </div>
-                
-                <div id="how-it-works">
+
+            <div class="clear"></div>
+
+                <div id="practical-apllication">
                     
-                    <h3>Practical Application</h3>
+                    <h3>Practical Aplication</h3>
                                     
-                    <div id="article-summary">
+                    <div id="practical-apllication-article">
                         <ol>
-                            <li>Digital Mapping Services in Google Maps</li>
-                                <dd><a href="https://www.geeksforgeeks.org/open-shortest-path-first-ospf-protocol-states/"> Shortest Path First (OSPF)></a> is a link-state routing protocol that is used to find the best path between the source
-                                and the destination router using its own Shortest Path First. Dijkstra’s algorithm is widely used in the routing
-                                protocols required by the routers to update their forwarding table. The algorithm provides the shortest cost path from
-                                the source router to other routers in the network.</dd>
-                            <li>Social Networking Applications</li>
+                            <li><strong>Digital Mapping Services in Google Maps</strong></li>
+                                    <dd>Many times we have tried to find the distance in G-Maps, from one city to another, or from your location to the nearest
+                                    desired location. There encounters the Shortest Path Algorithm, as there are various routes/paths connecting them but it
+                                    has to show the minimum distance, so Dijkstra’s Algorithm is used to find the minimum distance between two locations
+                                    along the path. Consider India as a graph and represent a city/place with a vertex and the route between two
+                                    cities/places as an edge, then by using this algorithm, the shortest routes between any two cities/places or from one
+                                    city/place to another city/place can be calculated.</dd>
+                            
+                            <div class="clear"></div>
+                            <li><strong>Social Networking Applications</strong></li>
                                     <dd>
-                                        
+                                        In many applications you might have seen the app suggests the list of friends that a particular user may know. How do
+                                        you think many social media companies implement this feature efficiently, especially when the system has over a billion
+                                        users. The standard Dijkstra algorithm can be applied using the shortest path between users measured through handshakes
+                                        or connections among them. When the social networking graph is very small, it uses standard Dijkstra’s algorithm along
+                                        with some other features to find the shortest paths, and however, when the graph is becoming bigger and bigger, the
+                                        standard algorithm takes a few several seconds to count and alternate advanced algorithms are used.
+
                                     </dd>
-                            <li>Telephone Network</li>
-                            <li>IP routing to find Open shortest Path First</li>
-                            <li>Flighting Agenda</li>
-                            <li>Designate file server</li>
-                            <li>......</li>
+
+                            <li><strong>Telephone Network</strong></li>
+                                    <dd>
+                                        As we know, in a telephone network, each line has a bandwidth, ‘b’. The bandwidth of the transmission line is the
+                                        highest frequency that that line can support. Generally, if the frequency of the signal is higher in a certain line, the
+                                        signal is reduced by that line. Bandwidth represents the amount of information that can be transmitted by the line. If
+                                        we imagine a city to be a graph, the vertices represent the switching stations, and the edges represent the transmission
+                                        lines and the weight of the edges represents ‘b’. So as you can see it can fall into the category of shortest distance
+                                        problem, for which the Dijkstra is can be used.
+                                    </dd>
                         </ol>
 
                     </div>
@@ -364,7 +418,7 @@
                 
                 <div class="side-article">
                                 
-                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=pVfj6mxhdMw">a youtube tutorials by "Computer Science"</a></p>
+                    <p><a class="reference-link" href="https://www.youtube.com/watch?v=pVfj6mxhdMw">Youtube tutorials by "Computer Science"</a></p>
                                 
                 </div>
                 
